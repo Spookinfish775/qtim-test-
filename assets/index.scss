@@ -1,0 +1,60 @@
+@import "./variables.scss";
+@import "./normalize.scss";
+@import "~/assets/fonts/stylesheet.css";
+
+@mixin max($media) {
+  @media only screen and (max-width: $media) {
+    -webkit-min-device-pixel-ratio: 2;
+    @content;
+  }
+}
+
+@mixin min($media) {
+  @media only screen and (min-width: $media) {
+    -webkit-min-device-pixel-ratio: 2;
+    @content;
+  }
+}
+
+@mixin minmax($min, $max) {
+  @media only screen and (min-width: $min) and (max-width: $max) {
+    -webkit-min-device-pixel-ratio: 2;
+    @content;
+  }
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: $whiteColor;
+  text-decoration: none !important;
+  letter-spacing: 1px;
+}
+
+img::selection,
+div::selection,
+span::selection,
+p::selection {
+  user-select: none;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+    color: $blackColor;
+    letter-spacing: 1px;
+}
+
+* {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.app-container {
+  max-width: 1000px;
+  padding: 0 20px;
+  margin: 160px auto 200px auto;
+}
